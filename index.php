@@ -81,38 +81,39 @@
 
 
         // data snack
-        // $name = $_GET["name"];
-        // $age = $_GET["age"];
-        // $email = $_GET["email"];
+        // $name = $_GET["name"] ?? '';
+        // $age = $_GET["age"] ?? '';
+        // $email = $_GET["email"] ?? '';
+
+        // $string_message = '';
+
+        // if (strlen($name) > 3 && strpos($email, "@") !== false && strpos($email, ".") !== false && is_numeric($age))  {
+        //     $string_message = "<h1 style='color: green;'>Accesso riuscito</h1>";
+        // } else {
+        //     $string_message = "<h1 style='color: red;'>Accesso NON riuscito</h1>";
+        // }
     ?>
         <form action="" method="get">
             <label for="name">
                 <input type="text" name="name" placeholder="inserisci il tuo nome">
             </label>
             <label for="age">
-                <input type="number" name="age" placeholder="inserisci la tua età">
+                <input type="text" name="age" placeholder="inserisci la tua età">
             </label>
             <label for="email">
-                <input type="email" name="email" placeholder="inserisci la tua email">
+                <input type="text" name="email" placeholder="inserisci la tua email">
             </label>
             <button>
                 verifica
             </button>
         </form>
 
-            <?php
-                
-                // if ( isset($_GET["name"]) && isset($_GET["age"]) && isset($_GET["email"]) ) {
-                //     if (strlen($_GET["name"]) > 3 && strpos($_GET["email"], "@")  && strpos($_GET["email"], ".") && is_numeric($_GET["age"]))  {
-                //         echo "<h1>Accesso eseguito</h1>";
-                //     } else {
-                //         echo "<h1>Accesso non eseguito</h1>";
-                //     }
-                // }
-                
-            ?>
+        <?php
+            // echo $string_message
+        ?>
+        --> 
 
-    -->  
+     
     
     
 
@@ -126,23 +127,21 @@
 
         // data snack
         // $min = 1;
-        // $max = 100;
+        // $max = 100000;
         // $arr_random = array();   
         
-        // echo var_dump($random_number);
-    ?>
+        // echo var_dump($random_number); // resta commentato
 
-    <h1><?php 
-        
         // while (count($arr_random) < 15) {
         //     $random_number = random_int($min, $max);
-        //     if (in_array($random_number, $arr_random) !== true) {
+        //     if (in_array($random_number, $arr_random) === false) {
         //         $arr_random[] = $random_number;
         //     }
         // }
-        // echo var_dump($arr_random);
+    ?>
 
-            
+    <h1><?php 
+        // echo var_dump($arr_random);
     ?></h1>
     -->
 
@@ -162,11 +161,15 @@
     ?>
 
     <?php
+        echo "<h1>stringa originale</h1>";
+        echo "<h2>$string</h2>";
+
         $new_arr = explode(".", $string);
         for ($i=0; $i < count($new_arr) ; $i++) { 
-            echo "<p>$new_arr[$i]</p>";
+            echo "<h3>$new_arr[$i]</h3>";
         }
     ?>
+    
     
 
 </body>
